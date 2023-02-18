@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import EditShipment from "./EditShipment";
+import Button from 'react-bootstrap/Button';
 
 function TableRow(props) {
 
@@ -17,6 +18,10 @@ function TableRow(props) {
         setShipment(updatedShipment);
     }
 
+    function removeShipment() {
+        props.remove(props.id);
+    }
+
     return (
         <>
             <tr>
@@ -26,8 +31,10 @@ function TableRow(props) {
                 <td>{shipment.trackingNo}</td>
                 <td>{shipment.status}</td>
                 <td>{shipment.consignee}</td>
-                <td><button>Del</button></td>
                 <td><EditShipment shipment={shipment} update={updateDetails} /></td>
+                <td><Button variant="danger" onClick={removeShipment}>
+                    Del
+                </Button></td>
             </tr>
         </>
     )

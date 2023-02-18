@@ -1,7 +1,14 @@
 import Table from 'react-bootstrap/Table';
 import TableRow from './TableRow';
+import React, { useState, useEffect } from 'react';
+import axios from 'axios';
 
 function BasicTable(props) {
+
+    function removeShipment(id) {
+        props.remove(id);
+    }
+
     return (
         <Table striped bordered hover>
             <thead>
@@ -16,16 +23,18 @@ function BasicTable(props) {
                 </tr>
             </thead>
             <tbody>
-                {props.shipments.map((shipment, key) => {
+                {props.shipments.map((shipment, id) => {
                     return (
                         <TableRow
-                            key={key}
+                            key={id}
+                            id={id}
                             orderNo={shipment.orderNo}
                             date={shipment.date}
                             customer={shipment.customer}
                             trackingNo={shipment.trackingNo}
                             status={shipment.status}
                             consignee={shipment.consignee}
+                            remove={removeShipment}
                         />
                     )
                 })}

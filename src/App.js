@@ -22,10 +22,18 @@ function App() {
     fetchData();
   }, [])
 
+  function removeShipment(shipmentId) {
+    //setShipments((prev) => prev.filter((shipment) => shipment.id !== shipmentId));
+    let tmpArray = [...shipments];
+    tmpArray.splice(shipmentId, 1);
+    //setShipments((prevData) => [...prevData]);
+    setShipments(tmpArray);
+    //console.log(shipments);
+  }
 
   return (
     <div className="App">
-      <Table shipments={shipments} />
+      <Table shipments={shipments} remove={removeShipment} />
     </div>
   );
 }
