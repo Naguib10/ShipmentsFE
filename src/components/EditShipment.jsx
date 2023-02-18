@@ -1,12 +1,26 @@
 import React, { useState } from 'react';
 import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
+import Form from 'react-bootstrap/Form';
 
 function EditShipment(props) {
     const [show, setShow] = useState(false);
 
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);
+
+    const [modifiedShipment, setModifiedShipment] = useState({
+        orderNo: props.shipment.orderNo,
+        date: props.shipment.date,
+        customer: props.shipment.customer,
+        trackingNo: props.shipment.trackingNo,
+        status: props.shipment.status,
+        consignee: props.shipment.consignee
+    })
+
+    function submitHandler() {
+
+    }
 
     return (
         <>
@@ -18,9 +32,16 @@ function EditShipment(props) {
                 <Modal.Header closeButton>
                     <Modal.Title>Edit Shipment</Modal.Title>
                 </Modal.Header>
-                <Modal.Body>
-                    <p>{props.shipment.orderNo}</p>
-                </Modal.Body>
+
+
+                <Form onSubmit={submitHandler}>
+                    <Form.Group className="mb-3" controlId="formName">
+                        <Form.Label>ORDERNO</Form.Label>
+                        <Form.Control onChange={e => setModifiedShipment(e.target.value)} value={modifiedShipment.orderNo} type="text" placeholder="Name" />
+                    </Form.Group>
+                </Form>
+
+
                 <Modal.Footer>
                     <Button variant="secondary" onClick={handleClose}>
                         Close
