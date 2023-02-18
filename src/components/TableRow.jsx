@@ -13,13 +13,13 @@ function TableRow(props) {
         consignee: props.consignee
     })
 
-    function showDetails() {
-
+    function updateDetails(updatedShipment) {
+        setShipment(updatedShipment);
     }
 
     return (
         <>
-            <tr onClick={showDetails}>
+            <tr>
                 <td>{shipment.orderNo}</td>
                 <td>{shipment.date}</td>
                 <td>{shipment.customer}</td>
@@ -27,7 +27,7 @@ function TableRow(props) {
                 <td>{shipment.status}</td>
                 <td>{shipment.consignee}</td>
                 <td><button>Del</button></td>
-                <td><EditShipment shipment={shipment} /></td>
+                <td><EditShipment shipment={shipment} update={updateDetails} /></td>
             </tr>
         </>
     )
