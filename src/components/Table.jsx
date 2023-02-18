@@ -1,7 +1,5 @@
 import Table from 'react-bootstrap/Table';
 import TableRow from './TableRow';
-import React, { useState, useEffect } from 'react';
-import axios from 'axios';
 
 function BasicTable(props) {
 
