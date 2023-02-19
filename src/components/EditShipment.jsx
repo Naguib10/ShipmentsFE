@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
 import Form from 'react-bootstrap/Form';
+import { ModalBody } from 'react-bootstrap';
 
 function EditShipment(props) {
     const [show, setShow] = useState(false);
@@ -40,34 +41,36 @@ function EditShipment(props) {
                 <Modal.Header closeButton>
                     <Modal.Title>Edit Shipment</Modal.Title>
                 </Modal.Header>
+                <ModalBody>
 
 
-                <Form onSubmit={submitHandler}>
-                    <Form.Group>
-                        <Form.Label>ORDERNO</Form.Label>
-                        <Form.Control onChange={e => setOrderNo(e.target.value)} value={orderNo} type="text" />
-                    </Form.Group>
-                    <Form.Group className="mb-3">
-                        <Form.Label>DATE</Form.Label>
-                        <Form.Control onChange={e => setDate(e.target.value)} value={date} type="text" />
-                    </Form.Group>
-                    <Form.Group className="mb-3">
-                        <Form.Label>CUSTOMER</Form.Label>
-                        <Form.Control onChange={e => setCustomer(e.target.value)} value={customer} type="text" />
-                    </Form.Group>
-                    <Form.Group className="mb-3">
-                        <Form.Label>TRACKINGNO</Form.Label>
-                        <Form.Control onChange={e => setTrackingNo(e.target.value)} value={trackingNo} type="text" />
-                    </Form.Group>
-                    <Form.Group className="mb-3">
-                        <Form.Label>STATUS</Form.Label>
-                        <Form.Control onChange={e => setStatus(e.target.value)} value={status} type="text" />
-                    </Form.Group>
-                    <Form.Group className="mb-3">
-                        <Form.Label>CONSIGNEE</Form.Label>
-                        <Form.Control onChange={e => setConsignee(e.target.value)} value={consignee} type="text" />
-                    </Form.Group>
-                </Form>
+                    <Form onSubmit={submitHandler}>
+                        <Form.Group>
+                            <Form.Label>ORDERNO</Form.Label>
+                            <Form.Control onChange={e => setOrderNo(e.target.value)} value={orderNo} type="text" />
+                        </Form.Group>
+                        <Form.Group className="mb-3">
+                            <Form.Label>DATE</Form.Label>
+                            <Form.Control onChange={e => setDate(e.target.value)} value={date} type="text" />
+                        </Form.Group>
+                        <Form.Group className="mb-3">
+                            <Form.Label>CUSTOMER</Form.Label>
+                            <Form.Control onChange={e => setCustomer(e.target.value)} value={customer} type="text" />
+                        </Form.Group>
+                        <Form.Group className="mb-3">
+                            <Form.Label>TRACKINGNO</Form.Label>
+                            <Form.Control onChange={e => setTrackingNo(e.target.value)} value={trackingNo} type="text" />
+                        </Form.Group>
+                        <Form.Group className="mb-3">
+                            <Form.Label>STATUS</Form.Label>
+                            <Form.Control onChange={e => setStatus(e.target.value)} value={status} type="text" />
+                        </Form.Group>
+                        <Form.Group className="mb-3">
+                            <Form.Label>CONSIGNEE</Form.Label>
+                            <Form.Control onChange={e => setConsignee(e.target.value)} value={consignee} type="text" />
+                        </Form.Group>
+                    </Form>
+                </ModalBody>
 
 
                 <Modal.Footer>

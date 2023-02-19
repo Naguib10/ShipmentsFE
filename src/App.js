@@ -23,12 +23,18 @@ function App() {
   }, [])
 
   function removeShipment(shipmentId) {
-    setShipments((prev) => prev.filter((shipment) => shipment.id !== shipmentId));
+    //setShipments((prev) => prev.filter((shipment) => shipment.id !== shipmentId));
+
+    setShipments((prev) => {
+      const tmp = prev.filter((shipment) => shipment.id !== shipmentId);
+      return tmp;
+    });
 
     // let tmpArray = [...shipments];
     // tmpArray.splice(shipmentId, 1);
     // setShipments(tmpArray);
     // console.log(tmpArray);
+    //console.log(shipments);
   }
 
   return (
