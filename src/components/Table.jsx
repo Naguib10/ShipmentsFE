@@ -1,11 +1,13 @@
 import Table from 'react-bootstrap/Table';
 import TableRow from './TableRow';
+//import React, { useState, useEffect } from 'react';
 
 function BasicTable(props) {
 
-    function removeShipment(id) {
-        props.remove(id);
+    function removeShipment(orderNo) {
+        props.remove(orderNo);
     }
+
 
     return (
         <Table striped bordered hover>
@@ -25,7 +27,6 @@ function BasicTable(props) {
                     return (
                         <TableRow
                             key={id}
-                            id={id}
                             orderNo={shipment.orderNo}
                             date={shipment.date}
                             customer={shipment.customer}

@@ -18,7 +18,7 @@ function TableRow(props) {
     }
 
     function removeShipment() {
-        props.remove(props.id);
+        props.remove(shipment.orderNo);
     }
 
     return (

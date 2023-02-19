@@ -22,19 +22,23 @@ function App() {
     fetchData();
   }, [])
 
-  function removeShipment(shipmentId) {
-    //setShipments((prev) => prev.filter((shipment) => shipment.id !== shipmentId));
+
+  function removeShipment(removedOrderNo) {
+    // setShipments((prev) => prev.filter((shipment) => shipment.orderNo !== removedOrderNo));
+    // console.log(shipments);
 
     setShipments((prev) => {
-      const tmp = prev.filter((shipment) => shipment.id !== shipmentId);
+      const tmp = prev.filter((shipment) => shipment.orderNo !== removedOrderNo);
+      console.log(tmp);
       return tmp;
     });
+
 
     // let tmpArray = [...shipments];
     // tmpArray.splice(shipmentId, 1);
     // setShipments(tmpArray);
     // console.log(tmpArray);
-    //console.log(shipments);
+    //console.log(removedOrderNo);
   }
 
   return (
