@@ -11,6 +11,11 @@ function App() {
     try {
       //const response = await axios.get("https://my.api.mockaroo.com/shipments.json?key=5e0b62d0"); //Online
       const response = await axios.get("shipments.js"); //Offline
+
+      //Adding ids to shipments to be able to delete after editing a shipment
+      response.data.forEach((item, i) => {
+        item._id = i + 1;
+      });
       setShipments(response.data);
 
     } catch (error) {
@@ -23,22 +28,9 @@ function App() {
   }, [])
 
 
-  function removeShipment(removedOrderNo) {
-    // setShipments((prev) => prev.filter((shipment) => shipment.orderNo !== removedOrderNo));
-    // console.log(shipments);
-
-    setShipments((prev) => {
-      const tmp = prev.filter((shipment) => shipment.orderNo !== removedOrderNo);
-      console.log(tmp);
-      return tmp;
-    });
-
-
-    // let tmpArray = [...shipments];
-    // tmpArray.splice(shipmentId, 1);
-    // setShipments(tmpArray);
-    // console.log(tmpArray);
-    //console.log(removedOrderNo);
+  function removeShipment(removedShipment) {
+    setShipments((prev) => prev.filter((shipment) => shipment._id !== removedShipment));
+    console.log(removedShipment);
   }
 
   return (

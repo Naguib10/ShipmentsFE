@@ -17,7 +17,6 @@ function EditShipment(props) {
     const [status, setStatus] = useState(props.shipment.status);
     const [consignee, setConsignee] = useState(props.shipment.consignee);
 
-
     function submitHandler() {
         const modifiedShipment = {
             orderNo: orderNo,
@@ -25,7 +24,8 @@ function EditShipment(props) {
             customer: customer,
             trackingNo: trackingNo,
             status: status,
-            consignee: consignee
+            consignee: consignee,
+            _id: props.shipment._id
         }
         props.update(modifiedShipment);
         handleClose();

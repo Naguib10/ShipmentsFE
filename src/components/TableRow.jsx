@@ -10,7 +10,8 @@ function TableRow(props) {
         customer: props.customer,
         trackingNo: props.trackingNo,
         status: props.status,
-        consignee: props.consignee
+        consignee: props.consignee,
+        _id: props._id
     })
 
     function updateDetails(updatedShipment) {
@@ -18,7 +19,7 @@ function TableRow(props) {
     }
 
     function removeShipment() {
-        props.remove(shipment.orderNo);
+        props.remove(shipment._id);
     }
 
     return (
