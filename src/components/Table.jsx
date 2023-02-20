@@ -5,7 +5,7 @@ function BasicTable(props) {
 
     return (
         <Table striped hover>
-            <thead className="text-primary">
+            <thead>
                 <tr>
                     <th>ORDERNO</th>
                     <th>DELIVERYDATE</th>

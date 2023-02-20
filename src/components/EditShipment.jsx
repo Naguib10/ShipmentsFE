@@ -33,7 +33,7 @@ function EditShipment(props) {
 
     return (
         <>
-            <Button variant="primary" onClick={handleShow}>
+            <Button variant="outline-primary btn-sm" onClick={handleShow}>
                 Edit
             </Button>
 
