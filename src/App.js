@@ -16,6 +16,7 @@ function App() {
       response.data.forEach((item, i) => {
         item._id = i + 1;
       });
+
       setShipments(response.data);
 
     } catch (error) {
@@ -30,7 +31,6 @@ function App() {
 
   function removeShipment(removedShipment) {
     setShipments((prev) => prev.filter((shipment) => shipment._id !== removedShipment));
-    console.log(removedShipment);
   }
 
   return (

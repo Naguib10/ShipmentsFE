@@ -45,7 +45,7 @@ function EditShipment(props) {
 
 
                     <Form onSubmit={submitHandler}>
-                        <Form.Group>
+                        <Form.Group className="mb-3">
                             <Form.Label>ORDERNO</Form.Label>
                             <Form.Control onChange={e => setOrderNo(e.target.value)} value={orderNo} type="text" />
                         </Form.Group>

@@ -4,8 +4,8 @@ import TableRow from './TableRow';
 function BasicTable(props) {
 
     return (
-        <Table striped bordered hover>
-            <thead>
+        <Table striped hover>
+            <thead className="text-primary">
                 <tr>
                     <th>ORDERNO</th>
                     <th>DELIVERYDATE</th>
@@ -21,13 +21,7 @@ function BasicTable(props) {
                     return (
                         <TableRow
                             key={shipment._id}
-                            _id={shipment._id}
-                            orderNo={shipment.orderNo}
-                            date={shipment.date}
-                            customer={shipment.customer}
-                            trackingNo={shipment.trackingNo}
-                            status={shipment.status}
-                            consignee={shipment.consignee}
+                            shipment={shipment}
                             remove={props.remove}
                         />
                     )

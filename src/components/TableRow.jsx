@@ -5,13 +5,13 @@ import Button from 'react-bootstrap/Button';
 function TableRow(props) {
 
     const [shipment, setShipment] = useState({
-        orderNo: props.orderNo,
-        date: props.date,
-        customer: props.customer,
-        trackingNo: props.trackingNo,
-        status: props.status,
-        consignee: props.consignee,
-        _id: props._id
+        orderNo: props.shipment.orderNo,
+        date: props.shipment.date,
+        customer: props.shipment.customer,
+        trackingNo: props.shipment.trackingNo,
+        status: props.shipment.status,
+        consignee: props.shipment.consignee,
+        _id: props.shipment._id
     })
 
     function updateDetails(updatedShipment) {
