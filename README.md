@@ -6,7 +6,7 @@ Loading and displaying data with AJAX on a table, with the ability to edit and d
 
 ## Description
 
-A React frontend project written in javascript as an interview task.
+A React frontend project written in javascript for an interview task.
 
 ## Getting Started
 
