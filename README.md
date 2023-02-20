@@ -1,6 +1,6 @@
 
 
-# Directors App
+# Shipments Table
 
 Loading and displaying data with AJAX on a table, with the ability to edit and delete items in the UI.
 
