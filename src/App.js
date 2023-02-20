@@ -35,6 +35,7 @@ function App() {
 
   return (
     <div className="App">
+      <h1>Shipments FE Task</h1>
       <Table shipments={shipments} remove={removeShipment} />
     </div>
   );
