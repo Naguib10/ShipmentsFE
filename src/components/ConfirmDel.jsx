@@ -4,7 +4,6 @@ import Modal from 'react-bootstrap/Modal';
 
 function ConfirmDel(props) {
     const [show, setShow] = useState(false);
-    //comment
 
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);
